@@ -1,3 +1,4 @@
+import LinkStyles from '@/src/components/Link/styled';
 import { devices } from '@/src/constants/media';
 import { styled } from 'styled-components';
 
@@ -62,7 +63,7 @@ const Actions = styled('div')`
   @media only screen and ${devices.sm} {
     flex-direction: column;
 
-    & > * {
+    & > ${LinkStyles.Link} {
       width: 100%;
     }
   }
