@@ -15,6 +15,10 @@ const Wrapper = styled('div')`
 
   width: 100%;
   height: ${height};
+
+  &[active='true'] {
+    background-color: ${({ theme }) => theme.colors.hex.base.white};
+  }
 `;
 
 const LinksWrapper = styled('div')`

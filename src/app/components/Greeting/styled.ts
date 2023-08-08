@@ -13,12 +13,14 @@ const Wrapper = styled('div')`
 
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
 
-  @media only screen and ${devices.md} {
+  @media only screen and ${devices.md.max} {
     max-width: calc(100% - 128px);
   }
 
-  @media only screen and ${devices.sm} {
+  @media only screen and ${devices.sm.max} {
     max-width: calc(100% - 48px);
+
+    margin-top: 72px;
   }
 `;
 
@@ -28,11 +30,11 @@ const Title = styled('span')`
 
   line-height: 1.1;
 
-  @media only screen and ${devices.md} {
+  @media only screen and ${devices.md.max} {
     font-size: 70px;
   }
 
-  @media only screen and ${devices.sm} {
+  @media only screen and ${devices.sm.max} {
     font-size: 56px;
   }
 `;
@@ -44,11 +46,8 @@ const Subtitle = styled('span')`
 
   max-width: 500px;
 
-  @media only screen and ${devices.md} {
+  @media only screen and ${devices.md.max} {
     max-width: 100%;
-  }
-
-  @media only screen and ${devices.md} {
     font-size: 19px;
   }
 `;
@@ -60,7 +59,7 @@ const Actions = styled('div')`
 
   margin-top: 56px;
 
-  @media only screen and ${devices.sm} {
+  @media only screen and ${devices.sm.max} {
     flex-direction: column;
 
     & > ${LinkStyles.Link} {

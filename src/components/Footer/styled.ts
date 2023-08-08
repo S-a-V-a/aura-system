@@ -6,11 +6,11 @@ const Wrapper = styled('div')`
 
   padding: 0 48px 56px 48px;
 
-  @media only screen and ${devices.md} {
+  @media only screen and ${devices.md.max} {
     padding: 91px 64px 32px 64px;
   }
 
-  @media only screen and ${devices.sm} {
+  @media only screen and ${devices.sm.max} {
     padding: 91px 24px 32px 24px;
   }
 `;
@@ -28,12 +28,12 @@ const Container = styled('div')`
     height: 100%;
   }
 
-  @media only screen and ${devices.md} {
+  @media only screen and ${devices.md.max} {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 24px;
   }
 
-  @media only screen and ${devices.sm} {
+  @media only screen and ${devices.sm.max} {
     row-gap: 0px;
     grid-template-columns: 1fr;
   }

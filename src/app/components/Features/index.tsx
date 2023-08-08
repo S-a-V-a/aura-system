@@ -7,7 +7,7 @@ import Slider from './Slider';
 import Static from './Static';
 
 const Fearutes: FC = memo(() => {
-  const md = useMediaQuery(devices.md);
+  const md = useMediaQuery(devices.md.minmax);
 
   return md ? <Slider /> : <Static />;
 });

@@ -4,14 +4,13 @@ import Link from '../Link';
 import { navMobileLinks } from '@/src/constants/header';
 import { useMediaQuery } from 'usehooks-ts';
 import { devices } from '@/src/constants/media';
-import { theme } from '@/src/theme';
 
 type TBurgerProps = {
   opened: boolean;
 };
 
 const BurgerMenu: FC<TBurgerProps> = ({ opened }) => {
-  const sm = useMediaQuery(devices.sm);
+  const sm = useMediaQuery(devices.sm.max);
 
   if (!opened) {
     return null;
@@ -26,9 +25,9 @@ const BurgerMenu: FC<TBurgerProps> = ({ opened }) => {
           </Link>
         ))}
         {sm && (
-          <Link href={'/'} type='text' size='xxl' color={theme.colors.hex.primary[600]}>
+          <Styled.Link href={'/'} type='text' size='xxl'>
             Buy Aura Camera
-          </Link>
+          </Styled.Link>
         )}
       </Styled.LinksWrapper>
     </Styled.Wrapper>

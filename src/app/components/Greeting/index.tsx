@@ -3,12 +3,8 @@
 import React, { FC } from 'react';
 import Styled from './styled';
 import Link from '@/src/components/Link';
-import { useMediaQuery } from 'usehooks-ts';
-import { devices } from '@/src/constants/media';
 
 const Greeting: FC = () => {
-  const md = useMediaQuery(devices.md);
-
   return (
     <Styled.Wrapper>
       <Styled.Title>
