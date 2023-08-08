@@ -16,6 +16,7 @@ export const colors = {
   },
   rgba: {
     gray: {
+      3: 'rgba(31, 34, 40, 0.03)',
       4: 'rgba(31, 34, 40, 0.04)',
     },
   },

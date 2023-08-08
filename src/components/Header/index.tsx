@@ -23,14 +23,14 @@ const Header: FC = () => {
       <Styled.LinksWrapper>
         {!md &&
           navLinks.map((link, idx) => (
-            <Link href={link.href} key={link.href + '-' + idx} variant='text' size='lg'>
+            <Link href={link.href} key={link.href + '-' + idx} type='text' size='lg'>
               {link.title}
             </Link>
           ))}
       </Styled.LinksWrapper>
       <Styled.Actions>
         {!sm && (
-          <Link href='/' size={!md ? 'lg' : 'md'} color={theme.colors.gradient.primary.root}>
+          <Link href='/' size={'md'}>
             Get Pricing
           </Link>
         )}

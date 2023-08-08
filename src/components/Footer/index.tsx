@@ -15,7 +15,7 @@ const Footer: FC = () => {
             <Typography size='lg'>Products</Typography>
             <Styled.LinksWrapper>
               {products.map((p, idx) => (
-                <Link key={p.link + '-' + idx} href={p.link} variant='text' color='gray' size='sm'>
+                <Link key={p.link + '-' + idx} href={p.link} type='text' color='gray' size='sm'>
                   {p.title}
                 </Link>
               ))}
@@ -33,7 +33,7 @@ const Footer: FC = () => {
             <Typography size='lg'>Benefits</Typography>
             <Styled.LinksWrapper>
               {benefits.map((p, idx) => (
-                <Link key={p.link + '-' + idx} href={p.link} variant='text' color='gray' size='sm'>
+                <Link key={p.link + '-' + idx} href={p.link} type='text' color='gray' size='sm'>
                   {p.title}
                 </Link>
               ))}

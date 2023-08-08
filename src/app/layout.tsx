@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
 import { ThemeProvider } from '../theme';
 import StyledComponentsRegistry from '../theme/registry';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import PageLayout from '../layouts/PageLayouts';
 
 const dMSans = DM_Sans({ subsets: ['latin'], weight: ['400'] });
 
@@ -18,9 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={dMSans.className}>
         <StyledComponentsRegistry>
           <ThemeProvider>
-            <Header />
-            {children}
-            <Footer />
+            <PageLayout>{children}</PageLayout>
           </ThemeProvider>
         </StyledComponentsRegistry>
       </body>

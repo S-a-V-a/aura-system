@@ -1,4 +1,4 @@
-import { TSize, TVariant } from '@/src/types/theme';
+import { TSize, TType, TVariant } from '@/src/types/theme';
 import { TFontSizeKeys } from '@/src/types/theme/fontSize';
 import RootLink from 'next/link';
 import { DefaultTheme, styled } from 'styled-components';
@@ -14,52 +14,73 @@ const getSizeStyles = (size: TFontSizeKeys, theme: DefaultTheme) => {
 
   switch (type) {
     case 'primary':
-      styles += 'padding: 18px 28px;';
+      styles += 'padding: 14px 28px;';
       break;
     case 'small':
-      styles += 'padding: 15px 20px;';
+      styles += 'padding: 12px 20px;';
       break;
   }
 
   return styles;
 };
 
-const getVariantStyles = (theme: DefaultTheme, variant: TVariant, color: string) => {
-  if (variant === 'contained') {
-    return `
-      background: ${color};
-      color: ${theme.colors.hex.base.white};
-    `;
+const getTypeStyles = (theme: DefaultTheme, type: TType) => {
+  switch (type) {
+    case 'primary':
+      return `
+            box-shadow: inset 0px -2px 4px 0px rgba(0, 0, 0, 0.1),
+              inset 0px 2px 12px 0px rgba(255, 255, 255, 0.2), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+            background: ${theme.colors.gradient.primary.root};
+            color: ${theme.colors.hex.base.white};
+
+            &[aria-disable='true'] {
+              background: ${theme.colors.gradient.primary.disabled};
+            }
+
+            &:hover {
+              background: ${theme.colors.gradient.primary.hover};
+            }
+          `;
+    case 'secondary':
+      return `
+            background: ${theme.colors.rgba.gray[4]};
+            color: ${theme.colors.hex.base.black};
+
+            &[aria-disable='true'] {
+              background: ${theme.colors.rgba.gray[3]};
+            }
+
+            &:hover {
+              background: ${theme.colors.rgba.gray[3]};
+            }
+      `;
+    case 'text':
+      return `
+        color: ${theme.colors.hex.base.black};
+
+        padding: 0;
+      `;
+    default:
+      return '';
   }
-
-  return `
-      color: ${color};
-
-      box-shadow: none;
-
-      padding: 0;
-    `;
 };
 
 const Link = styled(RootLink)<{
   size: TFontSizeKeys;
-  variant: TVariant;
-  color: string;
+  type: TType;
 }>`
+  display: block;
+
   width: fit-content;
 
   border: none;
   border-radius: 50px;
 
-  box-shadow:
-    inset 0px -2px 4px 0px rgba(0, 0, 0, 0.1),
-    inset 0px 2px 12px 0px rgba(255, 255, 255, 0.2),
-    inset 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
-
   text-decoration: none;
+  text-align: center;
 
   ${({ size, theme }) => getSizeStyles(size, theme)};
-  ${({ variant, theme, color }) => getVariantStyles(theme, variant, color)};
+  ${({ type, theme }) => getTypeStyles(theme, type)};
 `;
 
 const Styled = { Link };

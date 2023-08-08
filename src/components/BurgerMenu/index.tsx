@@ -21,12 +21,12 @@ const BurgerMenu: FC<TBurgerProps> = ({ opened }) => {
     <Styled.Wrapper>
       <Styled.LinksWrapper>
         {navMobileLinks.map((link, idx) => (
-          <Link href={link.href} key={link.href + '-' + idx} variant='text' size='xxl'>
+          <Link href={link.href} key={link.href + '-' + idx} type='text' size='xxl'>
             {link.title}
           </Link>
         ))}
         {sm && (
-          <Link href={'/'} variant='text' size='xxl' color={theme.colors.hex.primary[600]}>
+          <Link href={'/'} type='text' size='xxl' color={theme.colors.hex.primary[600]}>
             Buy Aura Camera
           </Link>
         )}
