@@ -1,32 +1,28 @@
-import React, { FC, PropsWithChildren } from "react";
-import Styled from "./styled";
-import { LinkProps as RootProps } from "next/link";
-import { TSize, TVariant } from "@/src/types/theme";
-import { TLinkColorsKeys } from "@/src/types/components/link";
+import React, { FC, PropsWithChildren } from 'react';
+import Styled from './styled';
+import { LinkProps as RootProps } from 'next/link';
+import { TVariant } from '@/src/types/theme';
+import {} from '@/src/types/components/link';
+import { TFontSizeKeys } from '@/src/types/theme/fontSize';
+import { theme } from '@/src/theme';
 
-type TLinkProps = {
-  size?: TSize;
-  disabled?: boolean;
-  variant?: TVariant;
-  color?: TLinkColorsKeys;
-} & PropsWithChildren &
-  RootProps;
+type TLinkProps = PropsWithChildren &
+  RootProps & {
+    size?: TFontSizeKeys;
+    disabled?: boolean;
+    variant?: TVariant;
+    color?: string;
+  };
 
 const Link: FC<TLinkProps> = ({
-  variant = "contained",
-  size = "primary",
+  variant = 'contained',
+  size = 'sm',
   disabled = false,
-  color,
+  color = theme.colors.hex.base.black,
   ...rest
 }) => {
   return (
-    <Styled.Link
-      size={size}
-      variant={variant}
-      aria-disabled={disabled}
-      color={color}
-      {...rest}
-    />
+    <Styled.Link size={size} variant={variant} aria-disabled={disabled} color={color} {...rest} />
   );
 };
 

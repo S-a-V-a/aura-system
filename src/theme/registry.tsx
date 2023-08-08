@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React, { FC, PropsWithChildren, useState } from "react";
-import { useServerInsertedHTML } from "next/navigation";
-import { ServerStyleSheet, StyleSheetManager } from "styled-components";
+import React, { FC, PropsWithChildren, useState } from 'react';
+import { useServerInsertedHTML } from 'next/navigation';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 
 const StyledComponentsRegistry: FC<PropsWithChildren> = ({ children }) => {
   // Only create stylesheet once with lazy initial state
@@ -15,12 +15,10 @@ const StyledComponentsRegistry: FC<PropsWithChildren> = ({ children }) => {
     return <>{styles}</>;
   });
 
-  if (typeof window !== "undefined") return <>{children}</>;
+  if (typeof window !== 'undefined') return <>{children}</>;
 
   return (
-    <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
-      {children}
-    </StyleSheetManager>
+    <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>{children}</StyleSheetManager>
   );
 };
 

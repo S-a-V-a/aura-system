@@ -1,12 +1,9 @@
-"use client";
+'use client';
 
-import { FC, PropsWithChildren } from "react";
-import {
-  ThemeProvider as RootThemeProvider,
-  createGlobalStyle,
-} from "styled-components";
-import { colors } from "./colors";
-import { fontSize } from "./fontSize";
+import { FC, PropsWithChildren } from 'react';
+import { ThemeProvider as RootThemeProvider, createGlobalStyle } from 'styled-components';
+import { colors } from './colors';
+import { fontSize } from './fontSize';
 
 export const theme = {
   colors,

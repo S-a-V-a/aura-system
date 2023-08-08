@@ -1,1 +1,1 @@
-export type TLinkColorsKeys = "base" | "primary" | "gray";
+export type TLinkColorsKeys = 'base' | 'primary' | 'gray';

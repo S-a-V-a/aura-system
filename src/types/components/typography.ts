@@ -1,1 +1,1 @@
-export type TTypographyColor = "base" | "gray" | "primary";
+export type TTypographyColor = 'base' | 'gray' | 'primary';

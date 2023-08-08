@@ -1,24 +1,47 @@
-"use client";
+'use client';
 
-import React, { FC } from "react";
-import Styled from "./styled";
-import Link from "../Link";
-import Image from "next/image";
-import LogoText from "../../../public/logo-text.svg";
-import { navLinks } from "@/src/constants/header";
+import React, { FC, useState } from 'react';
+import Styled from './styled';
+import Link from '../Link';
+import Image from 'next/image';
+import LogoText from '../../../public/logo-text.svg';
+import { navLinks } from '@/src/constants/header';
+import { useMediaQuery } from 'usehooks-ts';
+import { devices } from '@/src/constants/media';
+import BurgerMenu from '../BurgerMenu';
+import { theme } from '@/src/theme';
 
 const Header: FC = () => {
+  const sm = useMediaQuery(devices.sm);
+  const md = useMediaQuery(devices.md);
+
+  const [burger, setBurger] = useState(false);
+
   return (
     <Styled.Wrapper>
-      <Image src={LogoText} alt="aura-logo" />
+      <Image src={LogoText} alt='aura-logo' />
       <Styled.LinksWrapper>
-        {navLinks.map((link, idx) => (
-          <Link href={link.href} key={link.href + "-" + idx} variant="text">
-            {link.title}
-          </Link>
-        ))}
+        {!md &&
+          navLinks.map((link, idx) => (
+            <Link href={link.href} key={link.href + '-' + idx} variant='text' size='lg'>
+              {link.title}
+            </Link>
+          ))}
       </Styled.LinksWrapper>
-      <Link href="/">Get Pricing</Link>
+      <Styled.Actions>
+        {!sm && (
+          <Link href='/' size={!md ? 'lg' : 'md'} color={theme.colors.gradient.primary.root}>
+            Get Pricing
+          </Link>
+        )}
+
+        {md && (
+          <Styled.MenuButton onClick={() => setBurger(!burger)}>
+            <div />
+          </Styled.MenuButton>
+        )}
+      </Styled.Actions>
+      {md && <BurgerMenu opened={burger} />}
     </Styled.Wrapper>
   );
 };

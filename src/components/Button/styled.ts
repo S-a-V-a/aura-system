@@ -1,15 +1,15 @@
-import { TSize } from "@/src/types/theme";
-import { DefaultTheme, styled } from "styled-components";
+import { TSize } from '@/src/types/theme';
+import { DefaultTheme, styled } from 'styled-components';
 
 const getSizeStyles = (size: TSize, theme: DefaultTheme) => {
   switch (size) {
-    case "primary":
+    case 'primary':
       return `
                 padding: 14px 28px;
                 
                 font-size: ${theme.fontSize.lg};
             `;
-    case "small":
+    case 'small':
       return `
                 padding: 12px 20px;
 
@@ -18,7 +18,7 @@ const getSizeStyles = (size: TSize, theme: DefaultTheme) => {
   }
 };
 
-const Button = styled("button")<{ size: TSize }>`
+const Button = styled('button')<{ size: TSize }>`
   width: fit-content;
 
   color: ${({ theme }) => theme.colors.hex.base.white};
@@ -27,7 +27,8 @@ const Button = styled("button")<{ size: TSize }>`
   border: none;
   border-radius: 50px;
 
-  box-shadow: inset 0px -2px 4px 0px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    inset 0px -2px 4px 0px rgba(0, 0, 0, 0.1),
     inset 0px 2px 12px 0px rgba(255, 255, 255, 0.2),
     inset 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
 
