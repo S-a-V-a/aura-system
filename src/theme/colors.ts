@@ -4,7 +4,7 @@ export const colors = {
       white: '#fff',
       black: '#000',
     },
-    gray: { 700: '#525252' },
+    gray: { 700: '#525252', 50: '#e3e5e8' },
     primary: { 400: '#9470ff', 600: '#6f45ed', 700: '' },
   },
   gradient: {

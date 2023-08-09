@@ -8,6 +8,9 @@ export const breakpoints = {
     min: '1133px',
     max: '1680px',
   },
+  xxl: {
+    min: '1681px',
+  },
 };
 
 export const devices = {
