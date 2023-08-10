@@ -7,11 +7,11 @@ import Footer from '@/src/components/Footer';
 
 const PageLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <Styled.Main>
+    <>
       <Header />
-      {children}
+      <Styled.Main>{children}</Styled.Main>
       <Footer />
-    </Styled.Main>
+    </>
   );
 };
 

@@ -34,7 +34,7 @@ export const experienceTabs = [
 
 export const experienceTabsContent = [
   {
-    images: [],
+    images: [Card1],
     title: 'Build Deeper Connections',
     description:
       'Strong connections across disciplines foster trust, tailored solutions, and client loyalty. Genuine relationships spark word-of-mouth, fueling success and growth.',
@@ -44,7 +44,7 @@ export const experienceTabsContent = [
     },
   },
   {
-    images: [],
+    images: [Card1, Card2, Card3],
     title: 'Enlivened Wellness',
     description: `Revitalize wellness centers with aura camera systems, showcasing clients' vivid energy and emotions, seamlessly blending varied modalities for a captivating, synergistic quest to healing and harmony`,
     link: {
@@ -53,7 +53,7 @@ export const experienceTabsContent = [
     },
   },
   {
-    images: [],
+    images: [Card1, Card2, Card3],
     title: 'Enlightened Healing',
     description: `Elevate energy therapies by utilizing aura imaging systems to reveal clients' energy fields, enhancing their understanding and bolstering the impact of Reiki or energy healing techniques for transformative outcomes.`,
     link: {
@@ -62,7 +62,7 @@ export const experienceTabsContent = [
     },
   },
   {
-    images: [],
+    images: [Card1, Card2, Card3],
     title: 'Lorem Ipsum',
     description:
       'Lorem ipsum dolor sit amet consectetur. Quis eu mi tristique in nunc semper pretium nec. In mattis consectetur urna vulputate at aliquam. Ut blandit augue viverra porttitor tempor. Sed dapibus viverra sit et egestas malesuada pretium.',
@@ -72,7 +72,7 @@ export const experienceTabsContent = [
     },
   },
   {
-    images: [],
+    images: [Card1, Card2, Card3],
     title: 'Trade Show Allure',
     description: `Attracting attendees to trade show events, workshops, and sessions centered on aura discovery, leverage aura camera systems as a business opportunity to unlock residual income streams.`,
     link: {
@@ -81,7 +81,7 @@ export const experienceTabsContent = [
     },
   },
   {
-    images: [],
+    images: [Card1, Card2, Card3],
     title: 'Advanced Wellness Research',
     description:
       'Use aura cameras in holistic education centers to boost R&D, gather insights from aura data, and pioneer novel wellness strategies that reshape industry norms.',
@@ -90,4 +90,36 @@ export const experienceTabsContent = [
       href: '/',
     },
   },
-];
+] as unknown as {
+  images: string[];
+  title: string;
+  description: string;
+  link: { title: string; href: string };
+}[];
+
+export const RYBSectionData = {
+  images: '',
+  title: 'Revolutionize Your Business',
+  description:
+    'Harness AuraCloud 3D’s cutting-edge aura camera technology to elevate your business by delivering tailor-made wellness experiences, attracting diverse clients, and ultimately fostering customer loyalty.',
+  link: {
+    title: 'Buy Aura Camera',
+    href: '/',
+  },
+};
+
+export const cYESliderOptions = {
+  duration: 10000,
+  disableOnInteraction: false,
+  waitForTransition: false,
+  animation: {
+    rectProggress: {
+      initial: {
+        width: '0',
+      },
+      animate: {
+        width: '100%',
+      },
+    },
+  },
+};

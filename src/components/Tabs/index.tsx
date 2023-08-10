@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC } from 'react';
 import Styled from './styled';
 
@@ -14,7 +16,7 @@ const Tabs: FC<TTabsProps> = ({ tabs, onTabChange, activeIdx }) => {
         <Styled.Button
           key={t + '-' + tIdx}
           onClick={() => onTabChange(tIdx)}
-          type={activeIdx === tIdx ? 'primary' : 'secondary'}
+          variant={activeIdx === tIdx ? 'primary' : 'secondary'}
           size='lg'
         >
           {t}

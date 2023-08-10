@@ -1,5 +1,6 @@
 import { TSize, TType } from '@/src/types/theme';
 import { TFontSizeKeys } from '@/src/types/theme/fontSize';
+import { motion } from 'framer-motion';
 import { DefaultTheme, styled } from 'styled-components';
 
 const getSizeStyles = (size: TFontSizeKeys, theme: DefaultTheme) => {
@@ -64,9 +65,9 @@ const getTypeStyles = (theme: DefaultTheme, type: TType) => {
   }
 };
 
-const Button = styled('button')<{
+const Button = styled(motion.button)<{
   size: TFontSizeKeys;
-  type: TType;
+  variant: TType;
 }>`
   display: block;
 
@@ -79,7 +80,7 @@ const Button = styled('button')<{
   text-align: center;
 
   ${({ size, theme }) => getSizeStyles(size, theme)};
-  ${({ type, theme }) => getTypeStyles(theme, type)};
+  ${({ variant, theme }) => getTypeStyles(theme, variant)};
 `;
 
 const Styled = { Button };

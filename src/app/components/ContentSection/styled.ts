@@ -1,40 +1,20 @@
+import { styled } from 'styled-components';
 import RootLink from '@/src/components/Link';
 import Typography from '@/src/components/Typography';
-import { breakpoints } from '@/src/constants/media';
-import { styled } from 'styled-components';
 
 const Wrapper = styled('div')`
-  padding-inline: 100px;
-
-  margin-top: 200px;
-  margin-inline: auto;
-
-  max-width: min(calc(100% - 200px), ${breakpoints.xxl.min});
-`;
-
-export const Title = styled('span')`
-  display: block;
-
-  font-size: 52px;
-
-  margin-bottom: 48px;
-`;
-
-const TabContentWrapper = styled('div')`
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: minmax(0, 2fr) 1fr;
   column-gap: 80px;
-
-  margin-top: 96px;
 `;
 
-const TabImageWrapper = styled('div')`
+const ImageWrapper = styled('div')`
   background-color: ${({ theme }) => theme.colors.hex.base.black};
 
   aspect-ratio: 2 / 1.25;
 `;
 
-const TabContentDetailsWrapper = styled('div')`
+const DetailsWrapper = styled('div')`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -44,21 +24,21 @@ const TabContentDetailsWrapper = styled('div')`
   border-block: 1px solid ${({ theme }) => theme.colors.hex.gray[50]};
 `;
 
-const TabContentDetailsContainer = styled('div')`
+const DetailsContainer = styled('div')`
   display: flex;
   flex-direction: column;
   gap: 32px;
 `;
 
-const TabContentTitle = styled(Typography)`
+const Title = styled(Typography)`
   font-size: 40px;
 `;
 
-export const TabContentDescription = styled(Typography)`
+const Description = styled(Typography)`
   font-size: 17px;
 `;
 
-export const TabContentLink = styled(RootLink)`
+const Link = styled(RootLink)`
   background: transparent;
   color: ${({ theme }) => theme.colors.hex.primary[400]};
 
@@ -78,16 +58,22 @@ export const TabContentLink = styled(RootLink)`
   }
 `;
 
+const SliderWrapper = styled('div')`
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
 const Styled = {
   Wrapper,
+  ImageWrapper,
+  DetailsWrapper,
+  DetailsContainer,
   Title,
-  TabContentWrapper,
-  TabImageWrapper,
-  TabContentDetailsWrapper,
-  TabContentDetailsContainer,
-  TabContentTitle,
-  TabContentDescription,
-  TabContentLink,
+  Description,
+  Link,
+  SliderWrapper,
 };
 
 export default Styled;
